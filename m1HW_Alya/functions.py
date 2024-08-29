@@ -1,5 +1,7 @@
 import calculations_functions as cal
 def get_numbers(operation):
+    ''' For this function I had the idea in my mind but I had 
+    difficulty writing it so I used chatgbt.''' 
     print(operation)
     num1 = int(input("Enter a number: "))
     num2 = int(input("Enter a number: "))
