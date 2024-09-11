@@ -6,8 +6,12 @@ app = Flask(__name__)
 #for instance, loding a database
 @app.route("/")
 def index():
-    name= "Alya"
+    name= " Alya Saleh"
     return render_template("main_page.html", name=name)
 @app.route("/action")
 def action():
     return "Hello from the action route!"
+
+@app.route("/questions")
+def questions():
+    return "Tried to add another page"
