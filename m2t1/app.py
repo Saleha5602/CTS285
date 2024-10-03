@@ -1,29 +1,41 @@
-from flask import Flask, render_template, request  # type: ignore
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
+# Global variable to track attempts (this will reset if the server restarts)
+attempts = 0
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    global attempts
+    feedback = None
+    error = None
 
-@app.route('/calculate', methods=['POST'])
-def calculate():
-    num1 = float(request.form['num1'])
-    num2 = float(request.form['num2'])
-    operation = request.form['operation']
+    if request.method == 'POST':
+        full_equation = request.form['full_equation']
+        
+        try:
+            # Split the input to get the equation and the user-provided answer
+            equation, user_answer = full_equation.split('=')
+            correct_answer = eval(equation.strip())
+        except Exception:
+            error = "Invalid equation format. Please use 'num1 operation num2 = answer'."
+        else:
+            # Check the user's answer
+            if float(user_answer.strip()) == correct_answer:
+                feedback = "✅ Correct!"
+                attempts = 0  # Reset attempts on success
+            else:
+                attempts += 1
+                if attempts >= 3:
+                    feedback = f"EEE! The correct answer is {correct_answer}."
+                    attempts = 0  # Reset attempts after three tries
+                else:
+                    feedback = f"Incorrect! You have {3 - attempts} tries left."
 
-    if operation == 'add':
-        result = num1 + num2
-    elif operation == 'subtract':
-        result = num1 - num2
-    elif operation == 'multiply':
-        result = num1 * num2
-    elif operation == 'divide':
-        result = num1 / num2
-    else:
-        result = 'Invalid operation'
-
-    return render_template('result.html', result=result)
+    return render_template('index.html', feedback=feedback, error=error)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
