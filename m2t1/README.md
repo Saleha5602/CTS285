@@ -43,5 +43,5 @@ Next, we start with "a first cut with dummy data"
 ## Starting again:
 every time after the first:
 - go to the correct directory (m2t1)
-- source venv/bin/activate
-- flask --debug --app hello run
+- source env/Scripts/activate
+- flask --debug --app app run
