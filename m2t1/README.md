@@ -39,3 +39,9 @@ Next, we start with "a first cut with dummy data"
 - add main_page.html
 - Added app,index,results files for the M2HW1.
 - hello,main_page files re for m2t2.
+
+## Starting again:
+every time after the first:
+- go to the correct directory (m2t1)
+- source venv/bin/activate
+- flask --debug --app hello run
