@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Calculator Styles */
+.calculator {
+    background: #331bac;
+    border-radius: 8px;
+    padding: 25px;
+    width: 360px;
+    color: white;
+}
+
+.calculator h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.display {
+    width: 95%;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 75px;
+    height: 70px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #2780B7;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #063F6D;
+}
+
+.result {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Login Page Styles */
+.login-container {
+    background: #331bac;
+    border-radius: 8px;
+    padding: 25px;
+    width: 300px;
+    color: white;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 95%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #2780B7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #063F6D;
+}
+
