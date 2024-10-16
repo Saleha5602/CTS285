@@ -25,10 +25,18 @@
         {% endif %}
 
         <form action="/" method="post">
-            <input type="text" name="full_equation" placeholder="Enter equation (e.g., 6 + 6 = 12)" required>
-            <button type="submit" class="btn btn-success">Calculate</button>
+            <input type="text" name="full_equation" placeholder="Enter equation (e.g., 6 + 6 = 12)" value="{{ current_equation }}" required>
+            <button type="submit" name="calculate" class="btn btn-success">Calculate</button>
+            <button type="submit" name="memory_bank" class="btn btn-primary">Add to Memory Bank</button>
+            <button type="submit" name="go" class="btn btn-warning">GO</button>
         </form>
+
+        <h4>Your Memory Bank:</h4>
+        <ul>
+            {% for equation in memory_bank %}
+                <li>{{ equation }}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
-

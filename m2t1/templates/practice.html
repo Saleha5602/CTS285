@@ -1,0 +1,28 @@
+<!-- practice.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>Practice Equation</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Simple Calculator</a>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>Practice This Equation:</h3>
+        <form action="/" method="post">
+            <input type="text" name="full_equation" value="{{ equation }}" readonly>
+            <button type="submit" class="btn btn-success">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>
