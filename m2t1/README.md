@@ -21,6 +21,8 @@ first set up virtualenvironment
 - pip install virtualenv
 - virtualenv venv
 - source venv/bin/activate
+- OR: source env/Scripts/activate
+- (don't use "source" for windows, and it's \ not /)
 now we have our "venv" environment, so we can install things in it.
 to turn it off:
 - deactivate
